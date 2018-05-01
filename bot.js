@@ -83,7 +83,7 @@ const w = ['./img/bull1.png'];
                         ctx.fontSize = '40px';
                         ctx.fillStyle = "#34495E";
                         ctx.textAlign = "center";
-                        ctx.fillText(" Welcome to Server Al 3rb", 300, 60);
+                        ctx.fillText(" Welcome ", 300, 60);
 
                         //ur name
                         ctx.font = '40px Impact';
