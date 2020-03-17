@@ -47,7 +47,7 @@ client.on("guildMemberAdd", (member) => {
 
  client.on('guildMemberAdd', member => {
 
-     if (member.guild.id === "439033827499835414") {
+     if (member.guild.id === "683355868645163041") {
     
 if (member.user.bot) return;
 var Canvas = require('canvas')
@@ -108,7 +108,7 @@ const w = ['./img/bull1.png'];
                                  ctx.closePath();
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("441233678358675456").sendFile(canvas.toBuffer())
+client.channels.get("689166102529572880").sendFile(canvas.toBuffer())
 
 
 
@@ -253,7 +253,6 @@ client.on('message', message => {
         }
 }
 });
- client.login('NDM4OTU2Mzc3MTcyNDc1OTA1.DcM09A.2PGnMbXT2mc9LcBSvyluuCm-Ymo');
 
 
 client.login(process.env.BOT_TOKEN);
