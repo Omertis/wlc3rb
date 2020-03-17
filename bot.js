@@ -11,7 +11,7 @@ const fs = require('fs');
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
-const w = ['./img/bull1.png'];
+const w = ['./img/image0 (14).jpg'];
         let Image = Canvas.Image,
             canvas = new Canvas(749, 198),
             ctx = canvas.getContext('2d');
