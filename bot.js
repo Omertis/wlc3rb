@@ -67,7 +67,7 @@ const w = ['./img/bull1.png'];
                                  ctx.closePath();
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("689166102529572880").sendFile(canvas.toBuffer())
+client.channels.get("689553074192384205").sendFile(canvas.toBuffer())
 
 
 
