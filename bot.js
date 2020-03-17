@@ -2,47 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client({ fetchAllMembers: true });
 const fs = require('fs');
 
-var dat = JSON.parse("{}");
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.find("name", "سيرفر العرب")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        })
-    })
-})
-client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    if (!channel) {
-        console.log("!channel fails");
-        return;
-    }
-    if (member.id == client.user.id) {
-        return;
-    }
-    console.log('made it till here!');
-    var guild;
-    while (!guild)
-        guild = client.guilds.find("name", "سيرفر العرب")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv] < Invite.uses) {
-                    console.log(3);
-                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
- channel.send(` **Invited by**  ${Invite.inviter} `)            
- }
-            dat[Inv] = Invite.uses;
-        })
-    })
-});
 
 
  client.on('guildMemberAdd', member => {
@@ -109,6 +68,85 @@ const w = ['./img/bull1.png'];
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
 client.channels.get("689166102529572880").sendFile(canvas.toBuffer())
+
+
+
+})
+})
+
+}
+});
+
+const Discord = require('discord.js');
+const client = new Discord.Client({ fetchAllMembers: true });
+const fs = require('fs');
+
+
+
+ client.on('guildMemberAdd', member => {
+
+     if (member.guild.id === "683355868645163041") {
+    
+if (member.user.bot) return;
+var Canvas = require('canvas')
+var jimp = require('jimp')
+const w = ['./img/bull1.png'];
+        let Image = Canvas.Image,
+            canvas = new Canvas(749, 198),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.stroke();
+        ctx.beginPath();
+
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 749, 198);
+
+})
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        ctx.font = '35px agent_orange';
+                        ctx.fontSize = '40px';
+                        ctx.fillStyle = "#34495E";
+                        ctx.textAlign = "center";
+                        ctx.fillText(" Welcome to Server Al 3rb ", 300, 60);
+
+                        //ur name
+                        ctx.font = '40px Impact';
+                        ctx.fontSize = '48px';
+                        ctx.fillStyle = "#566573";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 300, 110);
+
+                         ctx.font = '30px Impact';
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#2C3E50";
+                        ctx.textAlign = "center";
+                        ctx.fillText("Member Number" + member.guild.memberCount, 300, 150);
+
+
+                        //Avatar
+                    let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(75, 101, 63, 0, Math.PI*2);
+                                 ctx.closePath();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 10, 38, 128, 126);     
+client.channels.get("689553074192384205").sendFile(canvas.toBuffer())
 
 
 
@@ -254,6 +292,23 @@ client.on('message', message => {
 }
 });
 
+    client.on('ready', () => {
+    console.log('-------------------------')
+    console.log(`✨ Name: ${client.user.username}`)
+    console.log('-------------------------')
+    console.log(`✨ Id: ${client.user.id}`)
+    console.log('-------------------------')
+    console.log(`✨ Servers: ${client.guilds.size}`)
+    console.log('-------------------------')
+    console.log(`✨ Members: ${client.users.size}`)
+    console.log('-------------------------')
+    console.log(`✨ Channels: ${client.channels.size}`)
+    console.log('-------------------------')
+  
+})
 
-client.login(process.env.BOT_TOKEN);
+
+
+client.login('NDg5MDczMDMyMTU3OTg2ODE2.XnEhzg.jZu8C6bHe6x9ajwR93xpyiE-xaM');
+
 
