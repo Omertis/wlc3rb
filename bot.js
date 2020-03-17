@@ -292,6 +292,7 @@ client.on('message', message => {
 }
 });
 
+
     client.on('ready', () => {
     console.log('-------------------------')
     console.log(`✨ Name: ${client.user.username}`)
@@ -309,6 +310,12 @@ client.on('message', message => {
 
 
 
-client.login('NDg5MDczMDMyMTU3OTg2ODE2.XnEhzg.jZu8C6bHe6x9ajwR93xpyiE-xaM');
+
+
+
+
+
+
+client.login(process.env.BOT_TOKEN);
 
 
