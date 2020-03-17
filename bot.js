@@ -77,84 +77,7 @@ client.channels.get("689553074192384205").sendFile(canvas.toBuffer())
 }
 });
 
-const Discord = require('discord.js');
-const client = new Discord.Client({ fetchAllMembers: true });
-const fs = require('fs');
 
-
-
- client.on('guildMemberAdd', member => {
-
-     if (member.guild.id === "683355868645163041") {
-    
-if (member.user.bot) return;
-var Canvas = require('canvas')
-var jimp = require('jimp')
-const w = ['./img/bull1.png'];
-        let Image = Canvas.Image,
-            canvas = new Canvas(749, 198),
-            ctx = canvas.getContext('2d');
-        ctx.patternQuality = 'bilinear';
-        ctx.filter = 'bilinear';
-        ctx.antialias = 'subpixel';
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-        ctx.shadowOffsetY = 2;
-        ctx.shadowBlur = 2;
-        ctx.stroke();
-        ctx.beginPath();
-
-        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
-            if (err) return console.log(err);
-            let BG = Canvas.Image;
-            let ground = new Image;
-            ground.src = Background;
-            ctx.drawImage(ground, 0, 0, 749, 198);
-
-})
-
-                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
-                jimp.read(url, (err, ava) => {
-                    if (err) return console.log(err);
-                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
-                        if (err) return console.log(err);
-                        ctx.font = '35px agent_orange';
-                        ctx.fontSize = '40px';
-                        ctx.fillStyle = "#34495E";
-                        ctx.textAlign = "center";
-                        ctx.fillText(" Welcome to Server Al 3rb ", 300, 60);
-
-                        //ur name
-                        ctx.font = '40px Impact';
-                        ctx.fontSize = '48px';
-                        ctx.fillStyle = "#566573";
-                        ctx.textAlign = "center";
-                        ctx.fillText(member.user.username, 300, 110);
-
-                         ctx.font = '30px Impact';
-                        ctx.fontSize = '20px';
-                        ctx.fillStyle = "#2C3E50";
-                        ctx.textAlign = "center";
-                        ctx.fillText("Member Number" + member.guild.memberCount, 300, 150);
-
-
-                        //Avatar
-                    let Avatar = Canvas.Image;
-                              let ava = new Avatar;
-                              ava.src = buf;
-                              ctx.beginPath();
-                              ctx.arc(75, 101, 63, 0, Math.PI*2);
-                                 ctx.closePath();
-                                 ctx.clip();
-                                 ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("689553074192384205").sendFile(canvas.toBuffer())
-
-
-
-})
-})
-
-}
-});
 
 client.on('message', message => {
     if (message.content.startsWith("invites")) {
@@ -307,6 +230,13 @@ client.on('message', message => {
     console.log('-------------------------')
   
 })
+
+
+
+
+
+
+
 
 
 
