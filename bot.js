@@ -121,12 +121,12 @@ client.on('message',function(message) {
             ${users.join('\n')}
         `);
 
-/*if(command == "emoji-img"){
-        let emojis = msg.guild.emojis
-  msg.channel.send({ files: [emoji.url] });
-}*/
-}
-});
+//if(command == "emoji-img"){
+    //    let emojis = msg.guild.emojis
+  //msg.channel.send({ files: [emoji.url] });
+//}
+//}
+//});
 client.on('message', message => {
    if (message.content === "roll") {
   message.channel.sendMessage(Math.floor(Math.random() * 100));
@@ -134,87 +134,7 @@ client.on('message', message => {
 });
 
 
-       client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('gmail')){
-           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    });
-    
-    client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('snapchat')){
-           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    });
-    
-    
-    client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('instagram')){
-            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    });
-    
-    
-    client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('twitter')){
-           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    });
-    
-    
-    client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('facebook')){
-            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    });
-    
-    
-    
-    client.on('message', message => {
-        var args = message.content.split(/[ ]+/)
-        if(message.content.includes('youtube')){
-          if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-    }
-        }
-    
-    });
-client.on('message', message => {
-    if(message.content.includes('discord.gg')){
-                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
-        if (!message.member.hasPermissions('ADMINISTRATOR')){
-        message.delete()
-    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
-        }
-}
-});
-
+      
 
     client.on('ready', () => {
     console.log('-------------------------')
